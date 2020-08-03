@@ -1,21 +1,21 @@
 // ******************************************************************************************
-// Mod Name: HobitoMod
-// Mod Id: HobitoMod_Hobito59
-// Mod Version: 0.0.6
+// Mod Name: HobitoMod_English
+// Mod Id: HobitoMod_English_Hobito59
+// Mod Version: 1.0.0
 // Mod File: main.js
 // ******************************************************************************************
 // Author: Hobito59
-// Last modified: 8/3/2020 3:02 PM
+// Last modified: 8/3/2020 4:40 PM
 // ******************************************************************************************
 // Notes: This file is defined in package.json and loaded as the first file from GDT
 // ******************************************************************************************
 
 // Setup a global mod object
-var HobitoMod_Hobito59   = { modPath: '', data: {} };
+var HobitoMod_English_Hobito59   = { modPath: '', data: {} };
 
 (function(){
 	// Acquire relative path to the mod
-	HobitoMod_Hobito59.modPath = GDT.getRelativePath();
+	HobitoMod_English_Hobito59.modPath = GDT.getRelativePath();
 
 	// Callback executed after succesful load
 	var ready = function () {
