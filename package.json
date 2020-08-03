@@ -1,0 +1,15 @@
+{
+
+	"id":"HobitoMod_Hobito59",
+	"name":"HobitoMod",
+	"version":"0.0.6a",
+	"author":"Hobito59",
+	"url":"",
+	"description":"Mon premier mod. Il ajoute 2 recherches donc le cloud gaming et une console. Requis UtimateLib.  Créé avec UtimateModEditor",
+	"main":"./main.js",
+	"dependencies":{
+		"gdt-modAPI":"0.1.x",
+			"UltimateLib":"1.x.x"
+		}
+	
+}
