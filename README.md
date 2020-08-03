@@ -1,4 +1,9 @@
 # hobitomod-gdt
+The "master" branch is in French.
+The english version is in the "english" branch.
+La branche "master" est en français.
+La version anglais est dans la branche "english"
+
 This Game Dev Tycoon (created by Greenheart Games) mod was made on "UltimateModEditor" and required : 
 - Game Dev Tycoon API
 - UltimateLib
