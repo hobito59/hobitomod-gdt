@@ -1,11 +1,11 @@
 // ******************************************************************************************
 // Mod Name: HobitoMod
 // Mod Id: HobitoMod_Hobito59
-// Mod Version: 0.0.6
+// Mod Version: 1.1.0
 // Mod File: code.js
 // ******************************************************************************************
 // Author: Hobito59
-// Last modified: 8/3/2020 3:02 PM
+// Last modified: 8/4/2020 4:41 PM
 // ******************************************************************************************
 // Notes: This file is loaded from main.js
 // ******************************************************************************************
@@ -49,6 +49,22 @@ UltimateLib.Research.addEngineResearch({
 	v: 14
 	});
 
+// Adding Support RealGear
+// -----------------------------------------------------------
+UltimateLib.Research.addEngineResearch({
+	id: "416b4949-e0d0-41b2-a32a-967ab1b2a2d6",
+	name: "Support RealGear",
+	canResearch: function () {
+							var res = true;
+							res =   GameManager.company.isLaterOrEqualThan(30, 3, 1);
+
+						return res;
+				},
+	category: "Engine",
+	categoryDisplayName: "Engine",
+	v: 14
+	});
+
 
 // ******************************************************************************************
 // Researches: Lab
@@ -79,9 +95,9 @@ UltimateLib.Research.addRndResearch({
 				// Notification
 				var notification = new Notification({
 	header: "Cloud Gaming",
-	text: "Nous avons fini. Reste plus que pr\u00E9parer les serveurs.",
-	image: HobitoMod_Hobito59.modPath + "",
-	buttonText: "OK",
+	text: "Afin de contrecarrer HobiWare, Mirconoft annonce aussi mCloud, un service de Cloud gaming. Mirconoft a ajout\u00E9 \\\"Nous avions de l'exp\u00E9rience en mati\u00E8re de cloud et de jeux vid\u00E9o. Nous savons de quoi nous parlons\\\". Il serait inclus avec le mBox Game Pass qui donne acc\u00E8s aussi \u00E0 un catalogue de jeux.\\nVonny a aussi son service,  Playsystem Now mais celui-ci reste discret.",
+	image: HobitoMod_Hobito59.modPath + "/images/notifications/mBox One.png",
+	buttonText: "A vous de jouer !",
 	weeksUntilFired: 0
 	});
 GameManager.company.notifications.push(notification);
@@ -129,9 +145,9 @@ UltimateLib.Research.addRndResearch({
 				// Notification
 				var notification = new Notification({
 	header: "R&D",
-	text: "Patron, Nous avons fini notre fonction de  moteur \u00E0 fonctionnement adaptatif. Il nous permettra de gagner en terme de d\u00E9veloppement lorsque nous porterons nos jeux sur des plateformes moins puissants telle que la Swap.",
+	text: "Patron, on pourrait ajouter une fonction de un moteur \u00E0 fonctionnement adaptatif. Il nous permettra de gagner en terme de d\u00E9veloppement lorsque nous porterons nos jeux sur des plateformes moins puissants telle que la Swap.",
 	image: HobitoMod_Hobito59.modPath + "",
-	buttonText: "Super !",
+	buttonText: "OK",
 	weeksUntilFired: 0
 	});
 GameManager.company.notifications.push(notification);
@@ -219,11 +235,11 @@ GDT.addPlatform({
 	name:"Gameflux",
 	company:"HobiWare.",
 	startAmount:1,
-	unitsSold:5E1,
-	licencePrize:1E6,
+	unitsSold:3E1,
+	licencePrize:5E5,
 	published:"24/8/4",
 	platformRetireDate:"99/9/1",
-	developmentCosts:5E5,
+	developmentCosts:1E5,
 	genreWeightings:[  1, 1, 1, 1, 1, 0.9 ],
 	audienceWeightings:[  1, 0.9, 1 ],
 	techLevel:7,
@@ -239,6 +255,39 @@ GDT.addPlatform({
 	text: "HobiWare, d\u00E9veloppeur de jeu vid\u00E9o annonce aussi son service nomm\u00E9, GameFlux dans le but de concurencer les consoles. Un abonnement qui devrait fournir un catalogue de jeux vid\u00E9o en plus de l'acc\u00E9s au service. Il devrait \u00EAtre disponible l'an prochain.",
 	image: HobitoMod_Hobito59.modPath + "/images/notifications/gameflux-logo.png",
 	buttonText: "OK",
+	weeksUntilFired: 0
+	});} 
+	}
+]
+	});
+
+// Adding RealGear
+// -----------------------------------------------------------
+GDT.addPlatform({
+	id:"ef59ca92-863e-4a47-a50c-a602052d388b",
+	name:"RealGear",
+	company:"Artlus",
+	startAmount:1,
+	unitsSold:1E2,
+	licencePrize:1E7,
+	published:"31/1/1",
+	platformRetireDate:"999/9/1",
+	developmentCosts:1E6,
+	genreWeightings:[  1, 1, 1, 1, 1, 1 ],
+	audienceWeightings:[  0.8, 1, 1 ],
+	techLevel:7,
+	iconUri: HobitoMod_Hobito59.modPath + "/images/platforms/RealGear.png",
+	events:[{
+	id: "3fbd5ad4-5c36-4624-9255-16d832ee35ce",
+	date: "30/3/1",
+	isRandom: false,
+	ignoreGameLengthModifier: false,
+	maxTriggers: 1,
+	getNotification: function(company){ return new Notification({
+	header: "Annonce",
+	text: "Une entreprise sorti de nulle part qui se nomme Artlus pr\u00E9sente le RealGear, un petit appareil \u00E0 peine sur le cot\u00E9 du front et qui plonge l'utilisateur dans un \u00E9tat permettant de ressentir avec ses 5 sens dans le jeu. Il devrait sortir dans 1 an, le temps que les d\u00E9veloppeurs mettre \u00E0 jour leur moteur.",
+	image: HobitoMod_Hobito59.modPath + "/images/notifications/RealGear.png",
+	buttonText: "Black Mirror ou SAO ? Telle est la question.",
 	weeksUntilFired: 0
 	});} 
 	}
@@ -266,16 +315,16 @@ GDT.addEvent({
 	});
 
 GDT.addEvent({
-	id: "e927212d-53f1-407c-aea4-17f365ab76de",
-	date: "23/9/1",
+	id: "7a427f6a-9a25-4313-93b6-ea2d1489f1f2",
+	date: "999/9/1",
 	isRandom: false,
 	ignoreGameLengthModifier: false,
 	maxTriggers: 1,
 	getNotification: function(company){ return new Notification({
-	header: "Cloud Gaming",
-	text: "Afin de contrecarrer HobiWare, Mirconoft annonce aussi mCloud, un service de Cloud gaming. Mirconoft a ajout\u00E9 \\\"Nous avions de l'exp\u00E9rience en mati\u00E8re de cloud et de jeux vid\u00E9o. Nous savons de quoi nous parlons\\\". Il serait inclus avec le mBox Game Pass qui donne acc\u00E8s aussi \u00E0 un catalogue de jeux.\\nVonny a aussi son service,  Playsystem Now mais celui-ci reste discret.",
-	image: HobitoMod_Hobito59.modPath + "/images/notifications/mBox One.png",
-	buttonText: "A vous de jouer !",
+	header: "999/9/1",
+	text: "Mon horloge indique 999/9/1. ATTENDS !? TA JOUE PENDANT TOUT CE TEMPS !? O\u00F9-tu as hack le jeu... aussi...\\nPourquoi cette date ? Car c'est la date que j'ai mis pour mes consoles soit retir\u00E9 du march\u00E9.\\nJe pense que personne verra ce message.",
+	image: HobitoMod_Hobito59.modPath + "",
+	buttonText: "hold my beer",
 	weeksUntilFired: 0
 	});} 
 	});
