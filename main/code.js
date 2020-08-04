@@ -1,11 +1,11 @@
 // ******************************************************************************************
 // Mod Name: HobitoMod_English
 // Mod Id: HobitoMod_English_Hobito59
-// Mod Version: 1.0.0
+// Mod Version: 1.1.0
 // Mod File: code.js
 // ******************************************************************************************
 // Author: Hobito59
-// Last modified: 8/3/2020 4:40 PM
+// Last modified: 8/4/2020 5:21 PM
 // ******************************************************************************************
 // Notes: This file is loaded from main.js
 // ******************************************************************************************
@@ -41,6 +41,22 @@ UltimateLib.Research.addEngineResearch({
 	name: "Engine with adaptive operation",
 	canResearch: function () {
 							var res = true;
+
+						return res;
+				},
+	category: "Engine",
+	categoryDisplayName: "Engine",
+	v: 14
+	});
+
+// Adding RealGear Support
+// -----------------------------------------------------------
+UltimateLib.Research.addEngineResearch({
+	id: "416b4949-e0d0-41b2-a32a-967ab1b2a2d6",
+	name: "RealGear Support",
+	canResearch: function () {
+							var res = true;
+							res =   GameManager.company.isLaterOrEqualThan(30, 3, 1);
 
 						return res;
 				},
@@ -245,6 +261,39 @@ GDT.addPlatform({
 ]
 	});
 
+// Adding RealGear
+// -----------------------------------------------------------
+GDT.addPlatform({
+	id:"ef59ca92-863e-4a47-a50c-a602052d388b",
+	name:"RealGear",
+	company:"Artlus",
+	startAmount:1,
+	unitsSold:1E2,
+	licencePrize:1E7,
+	published:"31/1/1",
+	platformRetireDate:"999/9/1",
+	developmentCosts:1E6,
+	genreWeightings:[  1, 1, 1, 1, 1, 1 ],
+	audienceWeightings:[  0.8, 1, 1 ],
+	techLevel:7,
+	iconUri: HobitoMod_English_Hobito59.modPath + "/images/platforms/RealGear.png",
+	events:[{
+	id: "3fbd5ad4-5c36-4624-9255-16d832ee35ce",
+	date: "30/3/1",
+	isRandom: false,
+	ignoreGameLengthModifier: false,
+	maxTriggers: 1,
+	getNotification: function(company){ return new Notification({
+	header: "Announcement",
+	text: "A company out of nowhere called Artlus presents the RealGear, a small device barely on the side of the forehead that plunges the user into a state that allows them to feel with their 5 senses in the game. It should be released in 1 year, while the developers update their engine.",
+	image: HobitoMod_English_Hobito59.modPath + "/images/notifications/RealGear.png",
+	buttonText: "Black Mirror or SAO? That is the question.",
+	weeksUntilFired: 0
+	});} 
+	}
+]
+	});
+
 
 // ******************************************************************************************
 // Events
@@ -276,6 +325,21 @@ GDT.addEvent({
 	text: "Afin de contrecarrer HobiWare, Mirconoft annonce aussi mCloud, un service de Cloud gaming. Mirconoft a ajout\u00E9 \\\"Nous avions de l'exp\u00E9rience en mati\u00E8re de cloud et de jeux vid\u00E9o. Nous savons de quoi nous parlons\\\". Il serait inclus avec le mBox Game Pass qui donne acc\u00E8s aussi \u00E0 un catalogue de jeux.\\nVonny a aussi son service,  Playsystem Now mais celui-ci reste discret.",
 	image: HobitoMod_English_Hobito59.modPath + "/images/notifications/mBox One.png",
 	buttonText: "A vous de jouer !",
+	weeksUntilFired: 0
+	});} 
+	});
+
+GDT.addEvent({
+	id: "7a427f6a-9a25-4313-93b6-ea2d1489f1f2",
+	date: "999/9/1",
+	isRandom: false,
+	ignoreGameLengthModifier: false,
+	maxTriggers: 1,
+	getNotification: function(company){ return new Notification({
+	header: "999/9/1",
+	text: "Mon horloge indique 999/9/1. ATTENDS !? TA JOUE PENDANT TOUT CE TEMPS !? O\u00F9-tu as hack le jeu... aussi...\\nPourquoi cette date ? Car c'est la date que j'ai mis pour mes consoles soit retir\u00E9 du march\u00E9.\\nJe pense que personne verra ce message.",
+	image: HobitoMod_English_Hobito59.modPath + "",
+	buttonText: "hold my beer",
 	weeksUntilFired: 0
 	});} 
 	});
