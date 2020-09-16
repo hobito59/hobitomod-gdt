@@ -1,11 +1,11 @@
 // ******************************************************************************************
 // Mod Name: HobitoMod
 // Mod Id: HobitoMod_Hobito59
-// Mod Version: 1.1.0
+// Mod Version: 1.2.0
 // Mod File: code.js
 // ******************************************************************************************
 // Author: Hobito59
-// Last modified: 8/4/2020 4:41 PM
+// Last modified: 9/16/2020 5:34 PM
 // ******************************************************************************************
 // Notes: This file is loaded from main.js
 // ******************************************************************************************
@@ -63,6 +63,36 @@ UltimateLib.Research.addEngineResearch({
 	category: "Engine",
 	categoryDisplayName: "Engine",
 	v: 14
+	});
+
+// Adding Micro-transcations
+// -----------------------------------------------------------
+UltimateLib.Research.addEngineResearch({
+	id: "d80c4f07-5fbd-4626-add9-58ecf4b74af2",
+	name: "Micro-transcations",
+	canResearch: function () {
+							var res = true;
+
+						return res;
+				},
+	category: "Gameplay",
+	categoryDisplayName: "Gameplay",
+	v: 6
+	});
+
+// Adding Jeu-service
+// -----------------------------------------------------------
+UltimateLib.Research.addEngineResearch({
+	id: "f17ed72a-aed6-429d-a7d3-76f329378044",
+	name: "Jeu-service",
+	canResearch: function () {
+							var res = true;
+
+						return res;
+				},
+	category: "Gameplay",
+	categoryDisplayName: "Gameplay",
+	v: 8
 	});
 
 
@@ -266,7 +296,7 @@ GDT.addPlatform({
 GDT.addPlatform({
 	id:"ef59ca92-863e-4a47-a50c-a602052d388b",
 	name:"RealGear",
-	company:"Artlus",
+	company:"Armus",
 	startAmount:1,
 	unitsSold:1E2,
 	licencePrize:1E7,
@@ -276,7 +306,7 @@ GDT.addPlatform({
 	genreWeightings:[  1, 1, 1, 1, 1, 1 ],
 	audienceWeightings:[  0.8, 1, 1 ],
 	techLevel:7,
-	iconUri: HobitoMod_Hobito59.modPath + "/images/platforms/RealGear.png",
+	iconUri: HobitoMod_Hobito59.modPath + "/images/platforms/RealGear-b.png",
 	events:[{
 	id: "3fbd5ad4-5c36-4624-9255-16d832ee35ce",
 	date: "30/3/1",
@@ -285,8 +315,8 @@ GDT.addPlatform({
 	maxTriggers: 1,
 	getNotification: function(company){ return new Notification({
 	header: "Annonce",
-	text: "Une entreprise sorti de nulle part qui se nomme Artlus pr\u00E9sente le RealGear, un petit appareil \u00E0 peine sur le cot\u00E9 du front et qui plonge l'utilisateur dans un \u00E9tat permettant de ressentir avec ses 5 sens dans le jeu. Il devrait sortir dans 1 an, le temps que les d\u00E9veloppeurs mettre \u00E0 jour leur moteur.",
-	image: HobitoMod_Hobito59.modPath + "/images/notifications/RealGear.png",
+	text: "Une entreprise sorti de nulle part qui se nomme Armus pr\u00E9sente le RealGear, un petit appareil \u00E0 mettre juste sur le cot\u00E9 du front et qui plonge l'utilisateur dans un \u00E9tat permettant de ressentir avec ses 5 sens dans le jeu. Il devrait sortir dans 1 an, le temps que les d\u00E9veloppeurs met \u00E0 jour leur moteur.",
+	image: HobitoMod_Hobito59.modPath + "/images/notifications/RealGear-b.png",
 	buttonText: "Black Mirror ou SAO ? Telle est la question.",
 	weeksUntilFired: 0
 	});} 
