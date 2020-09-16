@@ -19,3 +19,4 @@ I hope you will like it and don't hesitate to suggest additions.
 
 v1.0 : Release of the mod.
 v.1.1: Added RealGear and "RealGear Support" engine research. Added easter egg.
+v.1.2 (beta) : Added 2 engine research. Minor changes.
